@@ -30,3 +30,7 @@ class MemoryCache:
         for k in stale:
             self._store.pop(k, None)
         return len(stale)
+
+
+def build_cache_key(namespace: str, item_id: str) -> str:
+    return f'{namespace.strip().lower()}:{item_id.strip()}'
